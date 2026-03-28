@@ -6,56 +6,121 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Links para canais e redes sociais de André Silva Lessa">
     <title>André Silva Lessa</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&family=Kaushan+Script&display=swap"
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap"
       rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwindcss.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              manrope: ['Manrope', 'sans-serif'],
+            },
+          }
+        }
+      }
+    </script>
+
+    <style>
+      body {
+        background: url('./svg/bg.svg');
+        background-size: cover;
+        background-position: center;
+      }
+
+      .glass-btn {
+        background: rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1),
+          inset 0 1px 0 rgba(255, 255, 255, 0.4);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        border-top: 4px solid rgba(255, 255, 255, 0.3);
+
+      }
+
+      .glass-btn:hover {
+        transform: translateY(-2px) scale(1.03);
+      }
+
+      @keyframes slideIn {
+        0% {
+          opacity: 0;
+          transform: translateX(-50px);
+        }
+
+        100% {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+
+      @keyframes slideInUp {
+        0% {
+          opacity: 0;
+          transform: translateY(-50px);
+        }
+
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .animate-slideInLeft {
+        animation: slideIn 1s ease-out forwards;
+      }
+
+      .animate-slideInUp {
+        animation: slideInUp 1s ease-out forwards;
+      }
+    </style>
   </head>
 
-  <style>
-    .font-raleway {
-      font-family: 'Raleway', sans-serif;
-    }
+  <body class="min-h-screen flex items-center justify-center font-manrope">
 
-    .font-kaushan {
-      font-family: 'Kaushan Script', cursive, sans-serif;
-    }
-  </style>
-
-  <body class="bg-gray-800 md:bg-gray-900 min-h-screen flex items-center justify-center font-raleway overflow-hidden">
-
-    <main class="bg-gray-800 rounded-lg md:shadow-lg p-4 md:p-8 w-full max-w-md md:max-w-lg mx-4">
+    <main class="p-4 md:p-8 w-full max-w-md md:max-w-lg mx-4">
       <div class="flex flex-col items-center">
-        <img src="./img/img-perfil-1.jpg" alt="Foto de André Silva Lessa" loading="lazy"
-          class="h-48 w-48 rounded-full shadow-lg border-4 border-gray-700">
-        <h1 class="text-3xl font-semibold mt-4 text-gray-100">André Silva Lessa</h1>
-        <p class="text-gray-400 text-xl font-kaushan">Perto do Pai é bem melhor!</p>
+        <div class="w-40 h-40 rounded-full relative overflow-hidden animate-slideInUp">
+          <img src="./img/img-perfil-1.png" alt="Foto de André Silva Lessa" loading="lazy"
+            class="absolute w-full h-full object-cover z-20">
+          <div class="absolute w-full h-full bg-[#8da17f] rounded-full border-[15px] border-[#e8dfd0]"></div>
+        </div>
+        <h1 class="text-4xl font-bold mt-5 text-[#3d4a2e] animate-slideInLeft transition-all">André Silva
+          Lessa</h1>
+        <p class="text-[#6b7a5e] text-lg font-manrope mt-1 animate-slideInLeft transition-all">Perto do
+          Pai é
+          bem melhor!</p>
       </div>
 
-      <section class="mt-6 space-y-4">
-        <a href="https://youtube.com/@pertodopai3944?si=H7_eUA-upSTYgG3c" target="_blank"
-          class="flex items-center justify-center w-full py-3 bg-red-600 text-white rounded-lg shadow-md hover:bg-red-800 transition-colors duration-200 ease-in-out"
+      <section class="mt-8 space-y-4">
+        <a href="https://youtube.com/@pertodopai3944?si=H7_eUA-upSTYgG3c" target="_blank" rel="noopener noreferrer"
+          class="glass-btn flex items-center justify-center w-full py-3.5 text-[#4a5a3a] rounded-2xl active:scale-95 font-medium animate-slideInLeft"
           aria-label="Acessar o canal 'Perto do pai' no YouTube">
-          <i class="fab fa-youtube mr-2"></i> YouTube
+          <i class="fab fa-youtube mr-2 text-lg" aria-hidden="true"></i> YouTube
         </a>
         <a href="https://www.instagram.com/andre.silvalessa?utm_source=qr&igsh=MTVmdm10MmN4ZGF5NQ==" target="_blank"
-          class="flex items-center justify-center w-full py-3 text-white rounded-lg shadow-md 
-        bg-gradient-to-r from-[#F58529] via-[#DD2A7B] to-[#833AB4]
-        hover:from-[#833AB4] hover:via-[#F58529] hover:to-[#DD2A7B] 
-        transition-colors duration-200 ease-in-out" aria-label="Visitar o perfil de André Silva Lessa no Instagram">
-          <i class="fab fa-instagram mr-2"></i> Instagram
+          rel="noopener noreferrer"
+          class="glass-btn flex items-center justify-center w-full py-3.5 text-[#4a5a3a] rounded-2xl active:scale-95 font-medium animate-slideInLeft"
+          aria-label="Visitar o perfil de André Silva Lessa no Instagram">
+          <i class="fab fa-instagram mr-2 text-lg" aria-hidden="true"></i> Instagram
         </a>
-        <a href="https://www.tiktok.com/@1986andre?_t=ZM-8uiVEh8YtgV&_r=1" target="_blank"
-          class="flex items-center justify-center w-full py-3 bg-black text-white rounded-lg shadow-md hover:shadow-white/10 hover:shadow-lg transition duration-200"
+        <a href="https://www.tiktok.com/@1986andre?_t=ZM-8uiVEh8YtgV&_r=1" target="_blank" rel="noopener noreferrer"
+          class="glass-btn flex items-center justify-center w-full py-3.5 text-[#4a5a3a] rounded-2xl active:scale-95 font-medium animate-slideInLeft"
           aria-label="Acessar o perfil de André Silva Lessa no TikTok">
-          <i class="fab fa-tiktok mr-2"></i> TikTok
+          <i class="fab fa-tiktok mr-2 text-lg" aria-hidden="true"></i> TikTok
         </a>
-        <a href="https://www.facebook.com/share/15h2ioFeb4/" target="_blank"
-          class="flex items-center justify-center w-full py-3 bg-[#1877F2] text-white rounded-lg shadow-md hover:bg-[#0A56A1] transition-colors duration-200 ease-in-out"
+        <a href="https://www.facebook.com/share/15h2ioFeb4/" target="_blank" rel="noopener noreferrer"
+          class="glass-btn flex items-center justify-center w-full py-3.5 text-[#4a5a3a] rounded-2xl active:scale-95 font-medium animate-slideInLeft"
           aria-label="Visitar o perfil de André Silva Lessa no Facebook">
-          <i class="fab fa-facebook mr-2"></i> Facebook
+          <i class="fab fa-facebook mr-2 text-lg" aria-hidden="true"></i> Facebook
         </a>
       </section>
+
+
 
     </main>
 
